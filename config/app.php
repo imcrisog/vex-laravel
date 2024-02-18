@@ -165,6 +165,7 @@ return [
          */
 
          \Src\General\User\Application\Providers\UserServiceProvider::class,
+         \Src\General\Club\Application\Providers\ClubServiceProvider::class,
 
         /*
          * Application Service Providers...

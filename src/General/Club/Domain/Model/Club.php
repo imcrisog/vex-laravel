@@ -12,10 +12,10 @@ class Club extends AggregateRoot
     public function __construct(
         public readonly ?int $id,
         public readonly string $name,
-        public readonly int $coins,
+        public readonly ?int $coins,
         public readonly string $logo,
-        public readonly int $level,
-        public readonly int $grl,
+        public readonly ?int $level,
+        public readonly ?int $grl,
         
         public readonly string $stadium,
 

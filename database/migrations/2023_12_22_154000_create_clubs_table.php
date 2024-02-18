@@ -17,7 +17,8 @@ return new class extends Migration
             $table->integer('coins')->default(2000);
             $table->string('logo');
             $table->integer('level')->default(1);
-            $table->integer('grl');
+            $table->integer('grl')->default(20);
+            $table->boolean('verified')->default(false);
 
             $table->string('stadium');
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('coins')->default(2000);
             $table->string('logo');
             $table->integer('level')->default(1);
+            $table->boolean('verified')->default(false);
 
             $table->unsignedBigInteger('role_id')->nullable();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null');

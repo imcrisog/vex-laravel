@@ -3,6 +3,8 @@
 namespace Src\General\Club\Infrastructure\EloquentModels;
 
 use Illuminate\Database\Eloquent\Model;
+use Src\General\Role\Infrastructure\EloquentModels\RoleEloquentModel;
+use Src\General\User\Infrastructure\EloquentModels\UserEloquentModel;
 
 class ClubEloquentModel extends Model
 {
@@ -14,4 +16,15 @@ class ClubEloquentModel extends Model
     // ];
 
     // protected $fillable = [];
+
+    public function user()
+    {
+        return $this->belongsTo(UserEloquentModel::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(RoleEloquentModel::class);
+    }
+
 }
