@@ -16,6 +16,7 @@ class Club extends AggregateRoot
         public readonly string $logo,
         public readonly ?int $level,
         public readonly ?int $grl,
+        public readonly ?bool $verified,
         
         public readonly string $stadium,
 
@@ -34,6 +35,7 @@ class Club extends AggregateRoot
             'logo' => $this->logo,
             'level' => $this->level,
             'grl' => $this->grl,
+            'verified' => $this->verified,
 
             'stadium' => $this->stadium,
 
