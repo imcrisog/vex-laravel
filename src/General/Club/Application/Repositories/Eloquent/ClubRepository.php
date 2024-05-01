@@ -11,6 +11,18 @@ use Src\General\User\Infrastructure\EloquentModels\UserEloquentModel;
 
 class ClubRepository implements ClubRepositoryInterface
 {
+    public function index(): array
+    {
+        $clubs = [];
+        foreach (
+            ClubEloquentModel::all() as $clubEloquent
+        ) {
+            $clubs[] = ClubMapper::fromEloquent($clubEloquent);
+        }
+
+        return $clubs;
+    }
+
     public function show(int $club_id): Club
     {
         $clubEloquent = ClubEloquentModel::query()->findOrFail($club_id);

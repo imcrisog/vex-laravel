@@ -3,6 +3,7 @@
 namespace Src\General\Club\Infrastructure\EloquentModels;
 
 use Illuminate\Database\Eloquent\Model;
+use Src\General\Player\Infrastructure\EloquentModels\PlayerEloquentModel;
 use Src\General\Role\Infrastructure\EloquentModels\RoleEloquentModel;
 use Src\General\User\Infrastructure\EloquentModels\UserEloquentModel;
 
@@ -20,6 +21,11 @@ class ClubEloquentModel extends Model
     public function user()
     {
         return $this->belongsTo(UserEloquentModel::class);
+    }
+
+    public function players()
+    {
+        return $this->hasMany(PlayerEloquentModel::class);
     }
 
     public function role()

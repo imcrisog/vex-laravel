@@ -47,7 +47,6 @@ class Http extends HttpKernel
         ],
 
         'internal_api' => [
-            'jwt.verify:internal_api',
             'throttle:internal_api',
             SubstituteBindings::class
         ]

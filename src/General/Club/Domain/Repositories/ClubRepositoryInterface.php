@@ -6,6 +6,8 @@ use Src\General\Club\Domain\Model\Club;
 
 interface ClubRepositoryInterface
 {
+    public function index(): array;
+
     public function show(int $club_id): Club;
 
     public function store(Club $club, int $user_id): Club;

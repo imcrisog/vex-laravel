@@ -16,10 +16,6 @@ class JwtMiddleware extends BaseMiddleware
     public function handle(Request $request, Closure $next)
     {
         try {
-            if (in_array($request->decodedPath(), ['auth/login', 'auth/refresh', 'auth/register']) && $request->method() == 'POST') {
-                return $next($request);
-            } 
-
             JWTAuth::parseToken()->authenticate();
         } catch (Exception $e) {
             if ($e instanceof TokenInvalidException) {

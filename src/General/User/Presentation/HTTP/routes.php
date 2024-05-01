@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Src\General\User\Presentation\HTTP\UserController;
 
 Route::group([
-    'prefix' => 'user'
+    'prefix' => 'user',
+    'middleware' => 'jwt.verify'
 ], function() {
 
     Route::get('{id}', [UserController::class, 'show']);

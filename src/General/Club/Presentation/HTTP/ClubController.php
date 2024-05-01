@@ -7,6 +7,7 @@ use Src\Common\Infrastructure\Laravel\Controller;
 use Src\General\Club\Application\Mappers\ClubMapper;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
+use Src\General\Club\Application\UseCases\Command\AllClubCommand;
 use Src\General\Club\Application\UseCases\Command\FindByIdClubCommand;
 use Src\General\Club\Application\UseCases\Command\StoreClubCommand;
 
@@ -14,7 +15,7 @@ class ClubController extends Controller
 {
     public function index(): JsonResponse
     {
-        return response()->json(['data' => 'Data is now here'], Response::HTTP_ACCEPTED);
+        return response()->success((new AllClubCommand())->execute());
     }
 
     public function show(Request $request): JsonResponse
